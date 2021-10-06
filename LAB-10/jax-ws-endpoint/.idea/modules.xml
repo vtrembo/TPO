@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jax-ws-client/jax-ws-client.iml" filepath="$PROJECT_DIR$/jax-ws-client/jax-ws-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jax-ws-service-api/jax-ws-service-api.iml" filepath="$PROJECT_DIR$/jax-ws-service-api/jax-ws-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jax-ws-service-implementation/jax-ws-service-implementation.iml" filepath="$PROJECT_DIR$/jax-ws-service-implementation/jax-ws-service-implementation.iml" />
+    </modules>
+  </component>
+</project>

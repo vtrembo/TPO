@@ -1,0 +1,82 @@
+<project default="generate-proxy">
+
+	<path id="jars">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" classpathref="jars" />
+
+
+	<!-- VALUES TO ADAPT TO LOCAL CONFIGURATION - IN CASE SET TO 'localhost' Fiddler proxy will not be working -->
+	<property name="hostname" value="localhost" />
+	<property name="port" value="8080" />
+	<property name="host.port" value="${hostname}:${port}" />
+	<!-- VALUES TO ADAPT TO LOCAL CONFIGURATION - IN CASE SET TO 'localhost' Fiddler proxy will not be working -->
+
+
+	<property name="src" value="src/java/main" />
+	<property name="package" value="eu.glowacki.jaxws.client" />
+
+	<property name="sample.package" value="${package}.sample.proxy" />
+
+	<property name="delayed.package" value="${package}.delayed.proxy" />
+
+	<property name="composite.package" value="${package}.composite.proxy" />
+
+	<property name="bigdata.standard.package" value="${package}.bigdata.standard.proxy" />
+	<property name="bigdata.mtom.package" value="${package}.bigdata.mtom.proxy" />
+
+	<property name="onewayrobust.package" value="${package}.onewayrobust.proxy" />
+
+	<property name="addressing.package" value="${package}.addressing.proxy" />
+
+	<property name="hello.src" value="hello" />
+	<property name="hello.package" value="${sample.package}.hello" />
+	<property name="compositePeople.package" value="${package}.compositePeople.proxy"/>
+
+	<target name="generate-proxy">
+		<echo message=" *" />
+		<echo message=" *" />
+		<echo message=" * NOTE: copy provided 'jaxp.properties' file to '${java.home}\lib' directory prior to running 'generate-proxy' target" />
+		<echo message=" *" />
+		<echo message=" *" />
+
+		<!-- PEOPLE COMPOSITE -->
+		<wsimport wsdl="http://${host.port}/composite-people?wsdl" sourcedestdir="${src}" package="${compositePeople.package}" verbose="true" xnocompile="true" />
+
+		<!-- COMPOSITE -->
+		<!--<wsimport wsdl="http://${host.port}/composite?wsdl" sourcedestdir="${composite.src}" package="${composite.package}" verbose="true" xnocompile="true" />-->
+
+		<!-- DELAYED EXECUTION -->
+		<!--<wsimport wsdl="http://${host.port}/delayed?wsdl" sourcedestdir="${delayed.src}" package="${delayed.package}" verbose="true" xnocompile="true">
+			<binding dir="${basedir}" includes="delayed-asynchronous-binding.xml" />
+		</wsimport>-->
+		
+		<!--<wsimport wsdl="http://${host.port}/one-way-robust?wsdl" sourcedestdir="${src}" package="${onewayrobust.package}" verbose="true" xnocompile="true" />-->
+
+		<!--<wsimport wsdl="http://${host.port}/big-data/standard?wsdl" sourcedestdir="${bigdata.src}" package="${bigdata.standard.package}" verbose="true" xnocompile="true" />-->
+
+		<!--<wsimport wsdl="http://${host.port}/big-data/mtom?wsdl" sourcedestdir="${bigdata.src}" package="${bigdata.mtom.package}" verbose="true" xnocompile="true" />-->
+
+
+		<!--<wsimport wsdl="http://${host.port}/addressing?wsdl" sourcedestdir="${addressing.src}" package="${addressing.package}" verbose="true" xnocompile="true" />-->
+		
+		
+		<!--<wsimport wsdl="http://${host.port}/jax-ws-sample/calculator?wsdl" sourcedestdir="${sample.src}" package="${sample.package}" verbose="true" xnocompile="true" />-->
+
+		<!--<wsimport wsdl="http://${host.port}/jax-ws-sample/calculator-delayed?wsdl" sourcedestdir="${delayed.src}" package="${delayed.package}" verbose="true" xnocompile="true">
+			<binding dir="${basedir}" includes="calculator-delayed-asynchronous-binding.xml" />
+		</wsimport>-->
+
+		<!--<wsimport wsdl="http://${host.port}/jax-ws-sample/addressing-target?wsdl" sourcedestdir="${addressing.src}" package="${addressing.package}" verbose="true" xnocompile="true">
+			<binding dir="${basedir}" includes="sample-addressing-target-asynchronous-binding.xml" />
+		</wsimport>-->
+
+		<!--<wsimport wsdl="http://${host.port}/jax-ws-sample/addressing-callback?wsdl" sourcedestdir="${addressing.src}" package="${addressing.package}" verbose="true" xnocompile="true" />-->
+
+		<!--<wsimport wsdl="http://${host.port}/jax-ws-sample/hello?wsdl" sourcedestdir="${hello.src}" package="${hello.package}" verbose="true" xnocompile="true" />-->
+	</target>
+
+</project>

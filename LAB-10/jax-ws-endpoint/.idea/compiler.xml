@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="jax-ws-client" target="14" />
+      <module name="jax-ws-service-api" target="14" />
+      <module name="jax-ws-service-implementation" target="14" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RMI-Client/RMI-Client.iml" filepath="$PROJECT_DIR$/RMI-Client/RMI-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMI-Object/RMI-Object.iml" filepath="$PROJECT_DIR$/RMI-Object/RMI-Object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMI-Server/RMI-Server.iml" filepath="$PROJECT_DIR$/RMI-Server/RMI-Server.iml" />
+    </modules>
+  </component>
+</project>

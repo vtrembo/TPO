@@ -1,0 +1,9 @@
+<jaxws:bindings wsdlLocation="http://localhost:8080/delayed?wsdl"
+          xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+          node="wsdl:definitions">
+    
+    <!-- applies to wsdl:definitions node, that would mean the entire wsdl -->
+    <jaxws:enableAsyncMapping>true</jaxws:enableAsyncMapping>
+</jaxws:bindings>

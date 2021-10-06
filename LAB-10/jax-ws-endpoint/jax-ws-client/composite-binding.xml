@@ -1,0 +1,15 @@
+<jaxws:bindings wsdlLocation="http://localhost:8080/composite?wsdl"
+          xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+          xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+          node="wsdl:definitions">
+    
+	 <jaxws:bindings node="wsdl:definitions/wsdl:types/xsd:schema[@targetNamespace='http://glowacki.eu/composite']">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:elementName suffix="Composite"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxws:bindings>
+</jaxws:bindings>
